@@ -26,11 +26,18 @@
         <header-file src="src/ios/MTBBarcodeScanner.h" />
         <source-file src="src/ios/MTBBarcodeScanner.m" />
         <source-file src="src/ios/barcodeViewController.m" />
-        <source-file src="src/ios/barcodeViewController.xib" />
-        
-     
+        <resource-file src="src/ios/barcodeViewController.xib" />
       
+
+        <framework src="AVFoundation.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="QuartzCore.framework" />
+
+
     </platform>
 
     
 </plugin>
+
+
