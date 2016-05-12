@@ -721,7 +721,7 @@ static const NSInteger kErrorCodeSessionIsClosed = 1001;
 
 - (void)scanBarcode:(CDVInvokedUrlCommand *)command {
     
-   
+    NSLog(@"scanBarcode....");
     barcodeViewController *add = [[barcodeViewController alloc]
                                   initWithNibName:@"barcodeViewController" bundle:nil];
     
