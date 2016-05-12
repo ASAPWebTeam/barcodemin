@@ -7,6 +7,8 @@
 //
 
 #import "barcodeViewController.h"
+
+#import <AudioToolbox/AudioToolbox.h>
 #import "BarcodeminCDV.h"
 @interface barcodeViewController ()
 @property (nonatomic, weak) IBOutlet UIView *previewView;
@@ -71,7 +73,7 @@
 }
 
 #pragma mark - Scanning
-
+SystemSoundID sound1;
 - (void)startScanning {
     self.uniqueCodes = [[NSMutableArray alloc] init];
     
@@ -80,7 +82,16 @@
             if (code.stringValue && [self.uniqueCodes indexOfObject:code.stringValue] == NSNotFound) {
                 [self.uniqueCodes addObject:code.stringValue];
                 
-                NSLog(@"Found unique code: %@", code.stringValue);
+                
+                
+                NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"beep"
+                                                          withExtension:@"caf"];
+                AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &sound1);
+                
+                AudioServicesPlaySystemSound(sound1); // or...
+               // AudioServicesPlayAlertSound(sound1);
+                
+                
                 
                 
                 CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:code.stringValue];

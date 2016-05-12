@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="com.asapsystems.barcodemin"
-    version="0.1.3">
+    version="0.1.4">
     <name>BarcodeminCDV</name>
     <description>Super Fast Barcode Scanner Cordova plugin</description>
     <license>MIT</license>
@@ -27,12 +27,14 @@
         <source-file src="src/ios/BarcodeminCDV.m" />
         <source-file src="src/ios/barcodeViewController.m" />
         <resource-file src="src/ios/barcodeViewController.xib" />
-      
+        <resource-file src="src/ios/flip.png" />
+        <resource-file src="src/ios/flip@2x.png" />
+        <resource-file src="src/ios/beep.caf" />
 
         <framework src="AVFoundation.framework" />
         <framework src="UIKit.framework" />
         <framework src="QuartzCore.framework" />
-
+        <framework src="AudioToolbox.framework" />
 
     </platform>
 
