@@ -24,8 +24,10 @@
         
         <header-file src="src/ios/barcodeViewController.h" />
         <header-file src="src/ios/BarcodeminCDV.h" />
+        
         <source-file src="src/ios/BarcodeminCDV.m" />
         <source-file src="src/ios/barcodeViewController.m" />
+
         <resource-file src="src/ios/barcodeViewController.xib" />
         <resource-file src="src/ios/flip.png" />
         <resource-file src="src/ios/flip@2x.png" />
