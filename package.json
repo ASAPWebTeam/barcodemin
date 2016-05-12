@@ -1,0 +1,26 @@
+{
+  "name": "barcodemin",
+  "version": "0.1.0",
+  "description": "Super Fast Barcode Scanner Cordova plugin",
+  "cordova": {
+    "id": "com.asapsystems.barcodemin",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ASAPWebTeam/barcodemin.git"
+  },
+  "keywords": [
+    "barcode",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "samer d",
+  "license": "mit",
+  "bugs": {
+    "url": "https://github.com/ASAPWebTeam/barcodemin/issues"
+  },
+  "homepage": "https://github.com/ASAPWebTeam/barcodemin#readme"
+}
