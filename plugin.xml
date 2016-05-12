@@ -2,12 +2,12 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="com.asapsystems.barcodemin"
-    version="0.1">
+    version="0.1.0">
     <name>BarcodeminCDV</name>
     <description>Super Fast Barcode Scanner Cordova plugin</description>
     <license>MIT</license>
     <keywords>barcode</keywords>
-
+    <repo>https://github.com/ASAPWebTeam/barcodemin.git</repo>
     <issue></issue>
     
     <js-module src="www/BarcodeminCDV.js" name="BarcodeminCDV">
