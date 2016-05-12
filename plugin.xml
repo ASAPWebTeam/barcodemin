@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.asapsystems.barcodemin"
+    version="0.1">
+    <name>BarcodeminCDV</name>
+    <description>Super Fast Barcode Scanner Cordova plugin</description>
+    <license>MIT</license>
+    <keywords>barcode</keywords>
+
+    <issue></issue>
+    
+    <js-module src="www/BarcodeminCDV.js" name="BarcodeminCDV">
+        <clobbers target="barcodemin" />
+    </js-module>
+    
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="BarcodeminCDV">
+                <param name="ios-package" value="BarcodeminCDV" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/barcodeViewController.h" />
+        <header-file src="src/ios/MTBBarcodeScanner.h" />
+        <source-file src="src/ios/MTBBarcodeScanner.m" />
+        <source-file src="src/ios/barcodeViewController.m" />
+        <source-file src="src/ios/barcodeViewController.xib" />
+        
+     
+      
+    </platform>
+
+    
+</plugin>
