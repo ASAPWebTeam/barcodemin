@@ -1,9 +1,17 @@
 var exec = require("cordova/exec");
 
 
+module.exports = {
 
-module.exports.scanBarcode = function(callback) {
-    exec(callback, null, 'BarcodeminCDV', 'scanBarcode', [] );
+    /**
+     * Get an object with the keys 'version', 'build' and 'identifier'.
+     *
+     * @param {Function} success    Callback method called on success.
+     * @param {Function} fail       Callback method called on failure.
+     */
+    getAppInfo: function(success){
+        exec(success, null, 'BarcodeminCDV', 'scanBarcode', []);
+    },
+
+   
 };
-
-
