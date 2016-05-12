@@ -7,14 +7,14 @@
 //
 
 #import "barcodeViewController.h"
-#import "MTBBarcodeScanner.h"
+#import "BarcodeminCDV.h"
 @interface barcodeViewController ()
 @property (nonatomic, weak) IBOutlet UIView *previewView;
 @property (nonatomic, weak) IBOutlet UIButton *toggleScanningButton;
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *toggleTorchButton;
 
-@property (nonatomic, strong) MTBBarcodeScanner *scanner;
+@property (nonatomic, strong) BarcodeminCDV *scanner;
 @property (nonatomic, strong) NSMutableArray *uniqueCodes;
 @property (nonatomic, assign) BOOL captureIsFrozen;
 @property (nonatomic, assign) BOOL didShowCaptureWarning;
@@ -31,7 +31,7 @@
     [self.previewView addGestureRecognizer:tapGesture];
    //  self.toggleScanningButton.backgroundColor = [UIColor redColor];
     
-    [MTBBarcodeScanner requestCameraPermissionWithSuccess:^(BOOL success) {
+    [BarcodeminCDV requestCameraPermissionWithSuccess:^(BOOL success) {
         if (success) {
             [self startScanning];
         } else {
@@ -63,9 +63,9 @@
 
 #pragma mark - Scanner
 
-- (MTBBarcodeScanner *)scanner {
+- (BarcodeminCDV *)scanner {
     if (!_scanner) {
-        _scanner = [[MTBBarcodeScanner alloc] initWithPreviewView:_previewView];
+        _scanner = [[BarcodeminCDV alloc] initWithPreviewView:_previewView];
     }
     return _scanner;
 }
@@ -123,7 +123,7 @@
         [self stopScanning];
         self.toggleTorchButton.title = @"Enable Torch";
     } else {
-        [MTBBarcodeScanner requestCameraPermissionWithSuccess:^(BOOL success) {
+        [BarcodeminCDV requestCameraPermissionWithSuccess:^(BOOL success) {
             if (success) {
                 [self startScanning];
             } else {
@@ -169,9 +169,9 @@
 
 - (void)displayPermissionMissingAlert {
     NSString *message = nil;
-    if ([MTBBarcodeScanner scanningIsProhibited]) {
+    if ([BarcodeminCDV scanningIsProhibited]) {
         message = @"This app does not have permission to use the camera.";
-    } else if (![MTBBarcodeScanner cameraIsPresent]) {
+    } else if (![BarcodeminCDV cameraIsPresent]) {
         message = @"This device does not have a camera.";
     } else {
         message = @"An unknown error occurred.";
@@ -184,11 +184,7 @@
                       otherButtonTitles:nil] show];
 }
 
-- (void)scrollToLastTableViewCell {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.uniqueCodes.count - 1
-                                                inSection:0];
-   
-}
+
 
 #pragma mark - Gesture Handlers
 

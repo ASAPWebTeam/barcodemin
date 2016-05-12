@@ -7,7 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "MTBBarcodeScanner.h"
+#import "BarcodeminCDV.h"
 
 CGFloat const kFocalPointOfInterestX = 0.5;
 CGFloat const kFocalPointOfInterestY = 0.5;
@@ -18,7 +18,7 @@ static NSString *kErrorDomain = @"MTBBarcodeScannerError";
 static const NSInteger kErrorCodeStillImageCaptureInProgress = 1000;
 static const NSInteger kErrorCodeSessionIsClosed = 1001;
 
-@interface MTBBarcodeScanner () <AVCaptureMetadataOutputObjectsDelegate>
+@interface BarcodeminCDV () <AVCaptureMetadataOutputObjectsDelegate>
 /*!
  @property session
  @abstract

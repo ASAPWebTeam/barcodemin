@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, MTBTorchMode) {
     MTBTorchModeAuto
 };
 
-@interface MTBBarcodeScanner : CDVPlugin
+@interface BarcodeminCDV : CDVPlugin
 
 /**
  *  Set which camera to use. See MTBCamera for options.
