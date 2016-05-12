@@ -136,12 +136,12 @@ static const NSInteger kErrorCodeSessionIsClosed = 1001;
 
 @end
 
-@implementation MTBBarcodeScanner
+@implementation BarcodeminCDV
 
 #pragma mark - Lifecycle
 
 - (instancetype)init {
-    NSAssert(NO, @"MTBBarcodeScanner init is not supported. Please use initWithPreviewView: \
+    NSAssert(NO, @"BarcodeminCDV init is not supported. Please use initWithPreviewView: \
              or initWithMetadataObjectTypes:previewView: to instantiate a MTBBarcodeScanner");
     return nil;
 }
@@ -160,7 +160,7 @@ static const NSInteger kErrorCodeSessionIsClosed = 1001;
 - (instancetype)initWithMetadataObjectTypes:(NSArray *)metaDataObjectTypes previewView:(UIView *)previewView {
     NSParameterAssert(metaDataObjectTypes);
     NSAssert(metaDataObjectTypes.count > 0,
-             @"Must initialize MTBBarcodeScanner with at least one metaDataObjectTypes value.");
+             @"Must initialize BarcodeminCDV with at least one metaDataObjectTypes value.");
     
     self = [super init];
     if (self) {
@@ -233,8 +233,8 @@ static const NSInteger kErrorCodeSessionIsClosed = 1001;
 }
 
 - (void)startScanningWithResultBlock:(void (^)(NSArray *codes))resultBlock {
-    NSAssert([MTBBarcodeScanner cameraIsPresent], @"Attempted to start scanning on a device with no camera. Check requestCameraPermissionWithSuccess: method before calling startScanningWithResultBlock:");
-    NSAssert(![MTBBarcodeScanner scanningIsProhibited], @"Scanning is prohibited on this device. \
+    NSAssert([BarcodeminCDV cameraIsPresent], @"Attempted to start scanning on a device with no camera. Check requestCameraPermissionWithSuccess: method before calling startScanningWithResultBlock:");
+    NSAssert(![BarcodeminCDV scanningIsProhibited], @"Scanning is prohibited on this device. \
              Check requestCameraPermissionWithSuccess: method before calling startScanningWithResultBlock:");
     NSAssert(resultBlock, @"startScanningWithResultBlock: requires a non-nil resultBlock.");
     
