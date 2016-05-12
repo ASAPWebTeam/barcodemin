@@ -9,7 +9,7 @@ module.exports = {
      * @param {Function} success    Callback method called on success.
      * @param {Function} fail       Callback method called on failure.
      */
-    getAppInfo: function(success){
+    scanBarcode: function(success){
         exec(success, null, 'BarcodeminCDV', 'scanBarcode', []);
     },
 
