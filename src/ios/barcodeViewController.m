@@ -122,7 +122,7 @@ SystemSoundID sound1;
 - (IBAction)toggleScanningTapped:(id)sender {
     
     if(2>1){
-        CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
+        CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"0"];
         [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
         
          [self dismissViewControllerAnimated:YES completion:nil];
