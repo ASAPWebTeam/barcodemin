@@ -18,9 +18,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kb-3Y-Tf8">
-                    <rect key="frame" x="0.0" y="521" width="320" height="47"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kb-3Y-Tf8">
+                    <rect key="frame" x="8" y="523" width="304" height="47"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="ReI-W4-knK"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Cancel">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,7 +64,10 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="7g7-bh-8CG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PFM-hi-Sl4"/>
+                <constraint firstAttribute="trailingMargin" secondItem="0kb-3Y-Tf8" secondAttribute="trailing" id="TS3-ia-8UT"/>
                 <constraint firstAttribute="trailing" secondItem="7g7-bh-8CG" secondAttribute="trailing" id="aUB-Cl-RiY"/>
+                <constraint firstItem="0kb-3Y-Tf8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="iAg-Ci-jxc"/>
+                <constraint firstAttribute="bottomMargin" secondItem="0kb-3Y-Tf8" secondAttribute="bottom" id="q8T-rD-MId"/>
                 <constraint firstAttribute="bottom" secondItem="7g7-bh-8CG" secondAttribute="bottom" constant="46" id="xEZ-VZ-0QV"/>
                 <constraint firstItem="7g7-bh-8CG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zPU-nB-8d2"/>
             </constraints>
