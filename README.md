@@ -1,5 +1,18 @@
 Super fast barcode scanner for iOS by ASAPsystems.com
 
+The following barcode types are currently supported:
+
+iOS
+QR_CODE
+DATA_MATRIX
+UPC_E
+UPC_A
+EAN_8
+EAN_13
+CODE_128
+CODE_39
+ITF
+
 you can use it simply by :
 
     barcodemin.scanBarcode(function (barcode) {
