@@ -2,7 +2,7 @@ Super fast barcode scanner for iOS by ASAPsystems.com
 
 The following barcode types are currently supported:
 
-iOS
+IOS
 QR_CODE
 DATA_MATRIX
 UPC_E
