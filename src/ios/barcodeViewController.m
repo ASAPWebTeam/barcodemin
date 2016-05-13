@@ -81,31 +81,20 @@ SystemSoundID sound1;
         for (AVMetadataMachineReadableCodeObject *code in codes) {
             if (code.stringValue && [self.uniqueCodes indexOfObject:code.stringValue] == NSNotFound) {
                 [self.uniqueCodes addObject:code.stringValue];
-                
-                
-                
                 NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"beep"
                                                           withExtension:@"caf"];
                 AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &sound1);
-                
                 AudioServicesPlaySystemSound(sound1); // or...
-               // AudioServicesPlayAlertSound(sound1);
-                
-                
-                
-                
                 CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:code.stringValue];
                 [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-                
                 [self dismissViewControllerAnimated:YES completion:nil];
               
-//[self scrollToLastTableViewCell];
+
             }
         }
     }];
     
-   // [self.toggleScanningButton setTitle:@"Cancel " forState:UIControlStateNormal];
- //   self.toggleScanningButton.backgroundColor = [UIColor redColor];
+   
 }
 
 - (void)stopScanning {
@@ -124,11 +113,9 @@ SystemSoundID sound1;
     if(2>1){
         CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"0"];
         [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
-        
          [self dismissViewControllerAnimated:YES completion:nil];
         return;
     }
-    
     
     if ([self.scanner isScanning] || self.captureIsFrozen) {
         [self stopScanning];
@@ -147,7 +134,6 @@ SystemSoundID sound1;
 - (IBAction)switchCameraTapped:(id)sender {
     [self.scanner flipCamera];
 }
-
 - (IBAction)toggleTorchTapped:(id)sender {
     if (self.scanner.torchMode == MTBTorchModeOff || self.scanner.torchMode == MTBTorchModeAuto) {
         self.scanner.torchMode = MTBTorchModeOn;
@@ -157,7 +143,6 @@ SystemSoundID sound1;
         self.toggleTorchButton.title = @"Enable Torch";
     }
 }
-
 - (void)backTapped {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -175,9 +160,7 @@ SystemSoundID sound1;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.uniqueCodes.count;
 }
-
 #pragma mark - Helper Methods
-
 - (void)displayPermissionMissingAlert {
     NSString *message = nil;
     if ([BarcodeminCDV scanningIsProhibited]) {
@@ -187,15 +170,12 @@ SystemSoundID sound1;
     } else {
         message = @"An unknown error occurred.";
     }
-    
     [[[UIAlertView alloc] initWithTitle:@"Scanning Unavailable"
                                 message:message
                                delegate:nil
                       cancelButtonTitle:@"Ok"
                       otherButtonTitles:nil] show];
 }
-
-
 
 #pragma mark - Gesture Handlers
 

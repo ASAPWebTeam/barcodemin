@@ -198,7 +198,32 @@ static const NSInteger kErrorCodeSessionIsClosed = 1001;
             break;
     }
 }
-
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    
+    if ([[[UIDevice currentDevice] systemVersion] integerValue]<7.0) {
+        return UIInterfaceOrientationLandscapeRight|UIInterfaceOrientationLandscapeLeft;
+    }else{
+        return UIInterfaceOrientationPortrait;
+    }
+}
+-(BOOL) shouldAutorotate {
+    
+    return NO;
+}
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskAll;
+}
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+    
+    if ([[[UIDevice currentDevice] systemVersion] integerValue]<7.0) {
+        return UIInterfaceOrientationLandscapeRight|UIInterfaceOrientationLandscapeLeft;
+        return YES;
+    }else{
+        return UIInterfaceOrientationPortrait;
+    }
+    
+    return NO;
+}
 + (void)requestCameraPermissionWithSuccess:(void (^)(BOOL success))successBlock {
     if (![self cameraIsPresent]) {
         successBlock(NO);
