@@ -1,4 +1,4 @@
-Super fast barcode scanner by ASAPsystems.com
+Super fast barcode scanner for iOS by ASAPsystems.com
 
 you can use it simply by :
 
