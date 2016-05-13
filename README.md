@@ -11,8 +11,8 @@ you can use it simply by :
 
 
 you can install it by 
+
+
     cordova plugin add barcodemin
-
     or
-
     cordova plugin add https://github.com/ASAPWebTeam/barcodemin.git
