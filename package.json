@@ -5,6 +5,7 @@
   "cordova": {
     "id": "com.asapsystems.barcodemin",
     "platforms": [
+      "android",
       "ios"
     ]
   },
