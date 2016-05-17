@@ -13,6 +13,16 @@
     "type": "git",
     "url": "git+https://github.com/ASAPWebTeam/barcodemin.git"
   },
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=3.0.0"
+    },
+    {
+      "name": "cordova-ios",
+      "version": ">=3.0.0"
+    }
+  ],
   "keywords": [
     "barcode",
     "ecosystem:cordova",
