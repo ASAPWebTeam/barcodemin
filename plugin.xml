@@ -76,16 +76,16 @@
             </feature>
         </config-file>
         
-        <header-file src="src/ios/barcodeViewController.h" />
-        <header-file src="src/ios/BarcodeminCDV.h" />
+        <header-file src="ios/barcodeViewController.h" />
+        <header-file src="ios/BarcodeminCDV.h" />
         
-        <source-file src="src/ios/BarcodeminCDV.m" />
-        <source-file src="src/ios/barcodeViewController.m" />
+        <source-file src="ios/BarcodeminCDV.m" />
+        <source-file src="ios/barcodeViewController.m" />
 
-        <resource-file src="src/ios/barcodeViewController.xib" />
-        <resource-file src="src/ios/flip.png" />
-        <resource-file src="src/ios/flip@2x.png" />
-        <resource-file src="src/ios/beep.caf" />
+        <resource-file src="ios/barcodeViewController.xib" />
+        <resource-file src="ios/flip.png" />
+        <resource-file src="ios/flip@2x.png" />
+        <resource-file src="ios/beep.caf" />
 
         <framework src="AVFoundation.framework" />
         <framework src="UIKit.framework" />
