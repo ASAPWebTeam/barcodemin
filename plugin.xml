@@ -2,20 +2,23 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="com.asapsystems.barcodemin"
-    version="0.1.5">
+    version="0.1.6">
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
     <name>BarcodeminCDV</name>
     <description>Super Fast Barcode Scanner Cordova plugin</description>
     <license>MIT</license>
-    <keywords>barcode</keywords>
+    <keywords>cszbar,zbar,barcode,qr,qr code,scanner</keywords>
     <repo>https://github.com/ASAPWebTeam/barcodemin.git</repo>
-    <issue></issue>
+    
     
     <js-module src="www/BarcodeminCDV.js" name="BarcodeminCDV">
         <clobbers target="barcodemin" />
     </js-module>
     
 
-      <platform name="android">
+     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="BarcodeminCDV">
                 <param name="android-package" value="org.cloudsky.cordovaPlugins.BarcodeminCDV"/>
@@ -38,13 +41,13 @@
             <string name="csZbarScannerTitle"></string>
             <string name="csZbarScannerInstructions"></string>
             <color name="csZbarScannerTextColor">#ffffff</color>
-            <color name="csZbarScannerTextBackground">#000000</color>
+            <color name="csZbarScannerTextBackground">#88000000</color>
             <color name="csZbarScannerBackground">#000000</color>
         </config-file>
         <framework src="com.android.support:support-v4:23.1.0" />
         <resource-file src="android/res/layout/cszbarscanner.xml" target="res/layout/cszbarscanner.xml" />
         <source-file src="android/ZBarcodeFormat.java" target-dir="src/org/cloudsky/cordovaPlugins" />
-        <source-file src="android/BarcodeminCDV.java" target-dir="src/org/cloudsky/cordovaPlugins" />
+        <source-file src="android/ZBar.java" target-dir="src/org/cloudsky/cordovaPlugins" />
         <source-file src="android/ZBarScannerActivity.java" target-dir="src/org/cloudsky/cordovaPlugins" />
         <source-file src="android/libs/zbar.jar" target-dir="libs" />
         <source-file src="android/libs/armeabi/libiconv.so" target-dir="libs/armeabi" />
@@ -62,6 +65,9 @@
         <source-file src="android/res/drawable/camera_flash.png" target-dir="res/drawable-xhdpi"/>
         <source-file src="android/res/drawable/camera_flash.png" target-dir="res/drawable-xxhdpi"/>
     </platform>
+
+
+
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
