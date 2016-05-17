@@ -31,11 +31,11 @@
                 android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
-          
+            <uses-feature android:name="android.hardware.camera" />
             <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
             <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
             <uses-feature android:name="android.hardware.camera.front" android:required="false" />
-            <uses-permission android:name="android.permission.CAMERA" />
+           
         </config-file>
         <config-file target="res/values/strings.xml" parent="/*">
             <string name="csZbarScannerTitle"></string>
