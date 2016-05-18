@@ -54,6 +54,9 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEA-vm-LkN">
                             <rect key="frame" x="1" y="261" width="318" height="3"/>
                             <color key="backgroundColor" red="0.94128667089999996" green="0.40019014559999999" blue="0.29762628549999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="3" id="bB9-1n-oOj"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
