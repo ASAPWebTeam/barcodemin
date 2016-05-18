@@ -88,16 +88,15 @@ implements SurfaceHolder.Callback {
         super.onCreate(savedInstanceState);
 
         // Get parameters from JS
-        Intent startIntent = getIntent();
-        String paramStr = startIntent.getStringExtra(EXTRA_PARAMS);
-        JSONObject params;
-        try { params = new JSONObject(paramStr); }
-        catch (JSONException e) { params = new JSONObject(); }
-        String textTitle = params.optString("text_title");
-        String textInstructions = params.optString("text_instructions");
-        Boolean drawSight = params.optBoolean("drawSight", true);
-        whichCamera = params.optString("camera");
-        flashMode = params.optString("flash");
+      //  Intent startIntent = getIntent();
+      //  String paramStr = startIntent.getStringExtra(EXTRA_PARAMS);
+        JSONObject params = new JSONObject();
+   
+        String textTitle = "";
+        String textInstructions = "";
+        Boolean drawSight = false;
+        whichCamera = "back";
+        flashMode = "off";
 
         // Initiate instance variables
         autoFocusHandler = new Handler();

@@ -37,11 +37,11 @@ public class BarcodeminCDV extends CordovaPlugin {
             } else {
                 isInProgress = true;
                 scanCallbackContext = callbackContext;
-                JSONObject params = args.optJSONObject(0);
+               // JSONObject params = args.optJSONObject(0);
 
                 Context appCtx = cordova.getActivity().getApplicationContext();
                 Intent scanIntent = new Intent(appCtx, ZBarScannerActivity.class);
-                scanIntent.putExtra(ZBarScannerActivity.EXTRA_PARAMS, params.toString());
+               // scanIntent.putExtra(ZBarScannerActivity.EXTRA_PARAMS, params.toString());
                 cordova.startActivityForResult(this, scanIntent, SCAN_CODE);
             }
             return true;
