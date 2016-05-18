@@ -93,7 +93,7 @@ implements SurfaceHolder.Callback {
    
         String textTitle = "";
         String textInstructions = "";
-        Boolean drawSight = false;
+        Boolean drawSight = true;
         whichCamera = "back";
         flashMode = "off";
 
