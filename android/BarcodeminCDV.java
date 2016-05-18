@@ -63,7 +63,9 @@ public class BarcodeminCDV extends CordovaPlugin {
                     scanCallbackContext.success(barcodeValue);
                     break;
                 case Activity.RESULT_CANCELED:
-                    scanCallbackContext.error("cancelled");
+                    //scanCallbackContext.error("cancelled");
+                    String barcodeValue = result.getStringExtra("0");
+                    scanCallbackContext.success(barcodeValue);
                     break;
                 case ZBarScannerActivity.RESULT_ERROR:
                     scanCallbackContext.error("Scan failed due to an error");
