@@ -120,8 +120,7 @@ implements SurfaceHolder.Callback {
         button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Log.d("xx","cancel");
+                
                 onBackPressed();
 
             }
