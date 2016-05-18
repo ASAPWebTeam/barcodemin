@@ -25,7 +25,6 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 
-import org.cloudsky.cordovaPlugins.R;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
@@ -117,7 +116,7 @@ implements SurfaceHolder.Callback {
         TextView view_textInstructions = (TextView) findViewById(getResourceId("id/csZbarScannerInstructions"));
         view_textTitle.setText(textTitle);
         view_textInstructions.setText(textInstructions);
-       /* Button button = (Button) findViewById(R.id.buttonx);
+       Button button = (Button) findViewById(getResourceId("id/buttonx"));
         button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -126,7 +125,7 @@ implements SurfaceHolder.Callback {
                 onBackPressed();
 
             }
-        });*/
+        });
         // Draw/hide the sight
         if(!drawSight) {
             findViewById(getResourceId("id/csZbarScannerSight")).setVisibility(View.INVISIBLE);
