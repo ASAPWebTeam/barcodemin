@@ -33,6 +33,7 @@
     [self.previewView addGestureRecognizer:tapGesture];
    //  self.toggleScanningButton.backgroundColor = [UIColor redColor];
     
+
     [BarcodeminCDV requestCameraPermissionWithSuccess:^(BOOL success) {
         if (success) {
             [self startScanning];
