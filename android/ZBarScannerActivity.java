@@ -24,7 +24,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import org.cloudsky.R;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
