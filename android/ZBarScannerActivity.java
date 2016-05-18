@@ -118,7 +118,7 @@ implements SurfaceHolder.Callback {
         TextView view_textInstructions = (TextView) findViewById(getResourceId("id/csZbarScannerInstructions"));
         view_textTitle.setText(textTitle);
         view_textInstructions.setText(textInstructions);
-        Button button = (Button) findViewById(R.id.buttonx);
+       /* Button button = (Button) findViewById(R.id.buttonx);
         button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -127,7 +127,7 @@ implements SurfaceHolder.Callback {
                 onBackPressed();
 
             }
-        });
+        });*/
         // Draw/hide the sight
         if(!drawSight) {
             findViewById(getResourceId("id/csZbarScannerSight")).setVisibility(View.INVISIBLE);
