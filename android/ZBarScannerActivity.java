@@ -25,7 +25,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 
-
+import org.cloudsky.cordovaPlugins.R;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
