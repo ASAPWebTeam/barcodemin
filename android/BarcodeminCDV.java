@@ -40,8 +40,7 @@ public class BarcodeminCDV extends CordovaPlugin {
     static public final int PERMISSION_DENIED_ERROR = 20000;
     private void callCamera() {
         Log.d("xx", "callCamera");
-        String[] PERMISSIONS = {Manifest.permission.CAMERA};
-        cordova.requestPermissions(this, 0, PERMISSIONS);
+        cordova.requestPermission(this, 0, Manifest.permission.CAMERA);
         switchToAppSettings();
     }
 
