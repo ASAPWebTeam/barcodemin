@@ -42,10 +42,8 @@ public class BarcodeminCDV extends CordovaPlugin {
         Log.d("xx", "callCamera");
         // String[] PERMISSIONS = {Manifest.permission.CAMERA};
         cordova.requestPermission(this, 0, Manifest.permission.CAMERA);
-
-
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-        if (prefs.getBoolean("showsettings", true)) {
+        if (prefs.getBoolean("showsettings", false)) {
             switchToAppSettings();
 
         }
