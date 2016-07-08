@@ -36,12 +36,19 @@ public class BarcodeminCDV extends CordovaPlugin {
     private CallbackContext scanCallbackContext;
 
 
-
     static public final int PERMISSION_DENIED_ERROR = 20000;
+
     private void callCamera() {
         Log.d("xx", "callCamera");
+        // String[] PERMISSIONS = {Manifest.permission.CAMERA};
         cordova.requestPermission(this, 0, Manifest.permission.CAMERA);
-        switchToAppSettings();
+
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+        if (prefs.getBoolean("showsettings", true)) {
+            switchToAppSettings();
+
+        }
     }
 
     public void switchToAppSettings() {
@@ -71,6 +78,7 @@ public class BarcodeminCDV extends CordovaPlugin {
                 .show();
 
     }
+
     public void onRequestPermissionResult(int requestCode, String[] permissions,
                                           int[] grantResults) throws JSONException {
         for (int r : grantResults) {
@@ -95,7 +103,7 @@ public class BarcodeminCDV extends CordovaPlugin {
     }
 
 
-    public void showScanner(){
+    public void showScanner() {
         Intent scanIntent = new Intent(ctx, ZBarScannerActivity.class);
         // scanIntent.putExtra(ZBarScannerActivity.EXTRA_PARAMS, params.toString());
         cordova.startActivityForResult(this, scanIntent, SCAN_CODE);
@@ -103,35 +111,22 @@ public class BarcodeminCDV extends CordovaPlugin {
     // Plugin API ------------------------------------------------------
 
     Context ctx;
+
     @Override
-    public boolean execute (String action, JSONArray args, CallbackContext callbackContext)
-            throws JSONException
-    {
-        if(action.equals("scanBarcode")) {
-            if(isInProgress) {
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext)
+            throws JSONException {
+        if (action.equals("scanBarcode")) {
+            if (isInProgress) {
                 callbackContext.error("A scan is already in progress!");
             } else {
                 isInProgress = true;
                 scanCallbackContext = callbackContext;
-                // JSONObject params = args.optJSONObject(0);
-
                 ctx = cordova.getActivity().getApplicationContext();
-
-
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-                if (prefs.getBoolean("showsettings", true)) {
-                    switchToAppSettings();
-                    return false;
-                }
-                //
-                //return ;
-
                 if (cordova.hasPermission(Manifest.permission.CAMERA)) {
                     showScanner();
                 } else {
                     callCamera();
                 }
-              
             }
             return true;
         } else {
@@ -143,10 +138,9 @@ public class BarcodeminCDV extends CordovaPlugin {
     // External results handler ----------------------------------------
 
     @Override
-    public void onActivityResult (int requestCode, int resultCode, Intent result)
-    {
-        if(requestCode == SCAN_CODE) {
-            switch(resultCode) {
+    public void onActivityResult(int requestCode, int resultCode, Intent result) {
+        if (requestCode == SCAN_CODE) {
+            switch (resultCode) {
                 case Activity.RESULT_OK:
                     String barcodeValue = result.getStringExtra(ZBarScannerActivity.EXTRA_QRVALUE);
                     scanCallbackContext.success(barcodeValue);
