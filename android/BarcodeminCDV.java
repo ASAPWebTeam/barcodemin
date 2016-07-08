@@ -87,7 +87,7 @@ public class BarcodeminCDV extends CordovaPlugin {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("showsettings", true);
-                editor.commit();
+                editor.apply();
                 this.scanCallbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, PERMISSION_DENIED_ERROR));
                 return;
             }
