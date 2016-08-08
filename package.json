@@ -28,7 +28,7 @@
     "ecosystem:cordova",
     "cordova-ios"
   ],
-  "author": "samer d",
+  "author": "ASAP mobile team",
   "license": "mit",
   "bugs": {
     "url": "https://github.com/ASAPWebTeam/barcodemin/issues"
