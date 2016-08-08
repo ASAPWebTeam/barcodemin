@@ -86,7 +86,16 @@ SystemSoundID sound1;
                                                           withExtension:@"caf"];
                 AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &sound1);
                 AudioServicesPlaySystemSound(sound1); // or...
-                CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:code.stringValue];
+
+                NSString* output = nil;
+                
+                if([code.stringValue hasPrefix:@"0"] && [code.type isEqualToString:@"org.gs1.EAN-13"]) {
+                   output = [code.stringValue substringFromIndex:1];
+                }else{
+                    output=code.stringValue;
+                }
+                
+                CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:output];
                 [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
                 [self dismissViewControllerAnimated:YES completion:nil];
               
