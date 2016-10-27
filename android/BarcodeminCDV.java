@@ -6,8 +6,8 @@
  * Copyright (c) 2011, IBM Corporation
  * Copyright (c) 2013, Maciej Nux Jaros
  */
-package com.phonegap.plugins.barcodemincdv;
 
+package org.cloudsky.cordovaPlugins;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,7 +48,7 @@ public class BarcodeminCDV extends CordovaPlugin {
     private static final String SCAN_INTENT = "com.google.zxing.client.android.SCAN";
     private static final String ENCODE_DATA = "ENCODE_DATA";
     private static final String ENCODE_TYPE = "ENCODE_TYPE";
-    private static final String ENCODE_INTENT = "com.phonegap.plugins.barcodemincdv.ENCODE";
+    private static final String ENCODE_INTENT = "org.cloudsky.cordovaPlugins.ENCODE";
     private static final String TEXT_TYPE = "TEXT_TYPE";
     private static final String EMAIL_TYPE = "EMAIL_TYPE";
     private static final String PHONE_TYPE = "PHONE_TYPE";

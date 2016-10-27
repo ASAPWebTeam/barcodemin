@@ -21,10 +21,10 @@
 
 
  <platform name="android">
-    <source-file src="src/android/com/phonegap/plugins/barcodemincdv/BarcodeminCDV.java" target-dir="src/com/phonegap/plugins/barcodemincdv"/>
-    <config-file target="res/xml/config.xml" parent="/*">
+    <source-file src="android/BarcodeminCDV.java" target-dir="src/org/cloudsky/cordovaPlugins" />
+    <config-file target="res/xml/config.xml" parent="/*"> 
       <feature name="BarcodeminCDV">
-        <param name="android-package" value="com.phonegap.plugins.barcodemincdv.BarcodeminCDV"/>
+          <param name="android-package" value="org.cloudsky.cordovaPlugins.BarcodeminCDV"/>
       </feature>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
@@ -36,7 +36,7 @@
       </activity>
       <activity android:name="com.google.zxing.client.android.encode.EncodeActivity" android:label="Share">
         <intent-filter>
-          <action android:name="com.phonegap.plugins.barcodemincdv.ENCODE"/>
+          <action android:name="corg.cloudsky.cordovaPlugins.ENCODE"/>
           <category android:name="android.intent.category.DEFAULT"/>
         </intent-filter>
       </activity>
