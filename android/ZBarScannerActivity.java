@@ -105,9 +105,9 @@ implements SurfaceHolder.Callback {
         scanner.setConfig(Symbol.NONE, Config.ENABLE, 0);
 
         // Set the config for barcode formats
-        for(ZBarcodeFormat format : getFormats()) {
-            scanner.setConfig(format.getId(), Config.ENABLE, 1);
-        }
+       // for(ZBarcodeFormat format : getFormats()) {
+           // scanner.setConfig(format.getId(), Config.ENABLE, 1);
+       // }
 
         // Set content view
         setContentView(getResourceId("layout/cszbarscanner"));
