@@ -18,53 +18,48 @@
     </js-module>
     
 
-     <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="BarcodeminCDV">
-                <param name="android-package" value="org.cloudsky.cordovaPlugins.BarcodeminCDV"/>
-            </feature>
-        </config-file>
-        <config-file target="AndroidManifest.xml" parent="application">
-        <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
-                android:name="org.cloudsky.cordovaPlugins.ZBarScannerActivity"
-                android:screenOrientation="portrait"
-                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
-        </config-file>
-        <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-feature android:name="android.hardware.camera" />
-            <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
-            <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
-            <uses-feature android:name="android.hardware.camera.front" android:required="false" />
-            <uses-permission android:name="android.permission.CAMERA" />
-        </config-file>
-        <config-file target="res/values/strings.xml" parent="/*">
-            <string name="csZbarScannerTitle"></string>
-            <string name="csZbarScannerInstructions"></string>
-            <color name="csZbarScannerTextColor">#ffffff</color>
-            <color name="csZbarScannerTextBackground">#88000000</color>
-            <color name="csZbarScannerBackground">#000000</color>
-        </config-file>
-        <framework src="com.android.support:support-v4:23.1.0" />
-        <resource-file src="android/res/layout/cszbarscanner.xml" target="res/layout/cszbarscanner.xml" />
-        <source-file src="android/ZBarcodeFormat.java" target-dir="src/org/cloudsky/cordovaPlugins" />
-        <source-file src="android/BarcodeminCDV.java" target-dir="src/org/cloudsky/cordovaPlugins" />
-        <source-file src="android/ZBarScannerActivity.java" target-dir="src/org/cloudsky/cordovaPlugins" />
-        <source-file src="android/libs/zbar.jar" target-dir="libs" />
-        <source-file src="android/libs/armeabi/libiconv.so" target-dir="libs/armeabi" />
-        <source-file src="android/libs/armeabi/libzbarjni.so" target-dir="libs/armeabi" />
-        <source-file src="android/libs/armeabi-v7a/libiconv.so" target-dir="libs/armeabi-v7a" />
-        <source-file src="android/libs/armeabi-v7a/libzbarjni.so" target-dir="libs/armeabi-v7a" />
-        <source-file src="android/libs/arm64-v8a/libiconv.so" target-dir="libs/arm64-v8a" />
-        <source-file src="android/libs/arm64-v8a/libzbarjni.so" target-dir="libs/arm64-v8a" />s
-        <source-file src="android/libs/x86/libiconv.so" target-dir="libs/x86" />
-        <source-file src="android/libs/x86/libzbarjni.so" target-dir="libs/x86" />
-        <source-file src="android/res/drawable/camera_flash.png" target-dir="res/drawable"/>
-        <source-file src="android/res/drawable/camera_flash.png" target-dir="res/drawable-hdpi"/>
-        <source-file src="android/res/drawable/camera_flash.png" target-dir="res/drawable-ldpi"/>
-        <source-file src="android/res/drawable/camera_flash.png" target-dir="res/drawable-mdpi"/>
-        <source-file src="android/res/drawable/camera_flash.png" target-dir="res/drawable-xhdpi"/>
-        <source-file src="android/res/drawable/camera_flash.png" target-dir="res/drawable-xxhdpi"/>
-    </platform>
+
+
+ <platform name="android">
+    <source-file src="src/android/com/phonegap/plugins/barcodemincdv/BarcodeminCDV.java" target-dir="src/com/phonegap/plugins/barcodemincdv"/>
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="BarcodeminCDV">
+        <param name="android-package" value="com.phonegap.plugins.barcodemincdv.BarcodeminCDV"/>
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.google.zxing.client.android.CaptureActivity" android:clearTaskOnLaunch="true" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden" android:exported="false">
+        <intent-filter>
+          <action android:name="com.google.zxing.client.android.SCAN"/>
+          <category android:name="android.intent.category.DEFAULT"/>
+        </intent-filter>
+      </activity>
+      <activity android:name="com.google.zxing.client.android.encode.EncodeActivity" android:label="Share">
+        <intent-filter>
+          <action android:name="com.phonegap.plugins.barcodemincdv.ENCODE"/>
+          <category android:name="android.intent.category.DEFAULT"/>
+        </intent-filter>
+      </activity>
+      <activity android:name="com.google.zxing.client.android.HelpActivity" android:label="Share">
+        <intent-filter>
+          <action android:name="android.intent.action.VIEW"/>
+          <category android:name="android.intent.category.DEFAULT"/>
+        </intent-filter>
+      </activity>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.CAMERA"/>
+      <uses-permission android:name="android.permission.FLASHLIGHT"/>
+      <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    </config-file>
+    <framework src="src/android/barcodemincdv.gradle" custom="true" type="gradleReference"/>
+    <resource-file src="src/android/barcodemincdv-release-2.0.1.aar" target="libs/barcodemincdv.aar"/>
+    <dependency id="cordova-plugin-compat" version="^1.0.0"/>
+  </platform>
+
+
+
+     
 
 
 
