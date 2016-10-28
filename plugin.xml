@@ -52,8 +52,8 @@
       <uses-permission android:name="android.permission.FLASHLIGHT"/>
       <uses-feature android:name="android.hardware.camera" android:required="true"/>
     </config-file>
-    <framework src="src/android/barcodemincdv.gradle" custom="true" type="gradleReference"/>
-    <resource-file src="src/android/barcodemincdv-release-2.0.1.aar" target="libs/barcodemincdv.aar"/>
+    <framework src="android/barcodemincdv.gradle" custom="true" type="gradleReference"/>
+    <resource-file src="android/barcodemincdv-release-2.0.1.aar" target="libs/barcodemincdv.aar"/>
     <!--<dependency id="cordova-plugin-compat" version="^1.0.0"/>-->
   </platform>
 
