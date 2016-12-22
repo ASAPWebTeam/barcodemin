@@ -53,7 +53,6 @@ public class BarcodeminCDV extends CordovaPlugin {
     private static final String EMAIL_TYPE = "EMAIL_TYPE";
     private static final String PHONE_TYPE = "PHONE_TYPE";
     private static final String SMS_TYPE = "SMS_TYPE";
-    public static final String WIDTH = "SCAN_WIDTH";
 
     private static final String LOG_TAG = "BarcodeminCDV";
 
@@ -170,7 +169,9 @@ public class BarcodeminCDV extends CordovaPlugin {
                                 Log.i("CordovaLog", e.getLocalizedMessage());
                             }
                         }
-
+                        
+                        intentScan.putExtra(Intents.Scan.WIDTH, 0);
+                        
                         intentScan.putExtra(Intents.Scan.CAMERA_ID, obj.optBoolean(PREFER_FRONTCAMERA, false) ? 1 : 0);
                         intentScan.putExtra(Intents.Scan.SHOW_FLIP_CAMERA_BUTTON, obj.optBoolean(SHOW_FLIP_CAMERA_BUTTON, false));
                         if (obj.has(FORMATS)) {
@@ -183,7 +184,6 @@ public class BarcodeminCDV extends CordovaPlugin {
                            // intentScan.putExtra(Intents.Scan.ORIENTATION_LOCK, obj.optString(ORIENTATION));
                         intentScan.putExtra(Intents.Scan.ORIENTATION_LOCK, "false");
                        // }
-                        intentScan.putExtra(Intents.Scan.WIDTH, 800);
                     }
 
                 }
