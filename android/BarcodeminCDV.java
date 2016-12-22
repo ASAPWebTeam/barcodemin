@@ -53,6 +53,7 @@ public class BarcodeminCDV extends CordovaPlugin {
     private static final String EMAIL_TYPE = "EMAIL_TYPE";
     private static final String PHONE_TYPE = "PHONE_TYPE";
     private static final String SMS_TYPE = "SMS_TYPE";
+    public static final String WIDTH = "SCAN_WIDTH";
 
     private static final String LOG_TAG = "BarcodeminCDV";
 
@@ -182,7 +183,7 @@ public class BarcodeminCDV extends CordovaPlugin {
                            // intentScan.putExtra(Intents.Scan.ORIENTATION_LOCK, obj.optString(ORIENTATION));
                         intentScan.putExtra(Intents.Scan.ORIENTATION_LOCK, "false");
                        // }
-                        intentScan.putExtra(com.google.zxing.client.android.WIDTH, 800);
+                        intentScan.putExtra(Intents.WIDTH, 800);
                     }
 
                 }
