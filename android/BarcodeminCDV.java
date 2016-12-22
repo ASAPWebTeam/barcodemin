@@ -186,7 +186,6 @@ public class BarcodeminCDV extends CordovaPlugin {
                         intentScan.putExtra(Intents.Scan.ORIENTATION_LOCK, "false");
                        // }
                         intentScan.putExtra(Intents.WIDTH, 1600);
-                        intentScan.putExtra(Intents.HEIGHT, 2000);
                     }
 
                 }
