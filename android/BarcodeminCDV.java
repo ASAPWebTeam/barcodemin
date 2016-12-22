@@ -23,8 +23,10 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.PermissionHelper;
 
-import com.google.zxing.client.android.Intents;
+import com.google.zxing.client.android.CaptureActivity;
+import com.google.zxing.client.android.encode.EncodeActivity;
 import com.google.zxing.client.android.camera.CameraManager;
+import com.google.zxing.client.android.Intents;
 
 /**
  * This calls out to the ZXing barcode reader and returns the result.
@@ -183,8 +185,7 @@ public class BarcodeminCDV extends CordovaPlugin {
                            // intentScan.putExtra(Intents.Scan.ORIENTATION_LOCK, obj.optString(ORIENTATION));
                         intentScan.putExtra(Intents.Scan.ORIENTATION_LOCK, "false");
                        // }
-                        intentScan.putExtra(CameraManager.MIN_FRAME_WIDTH, 600);
-                        intentScan.putExtra(CameraManager.MAX_FRAME_WIDTH, 2000);
+                        intentScan.putExtra(com.google.zxing.client.android.camera.WIDTH, 600);
                     }
 
                 }
