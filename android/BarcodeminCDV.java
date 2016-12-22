@@ -53,12 +53,7 @@ public class BarcodeminCDV extends CordovaPlugin {
     private static final String EMAIL_TYPE = "EMAIL_TYPE";
     private static final String PHONE_TYPE = "PHONE_TYPE";
     private static final String SMS_TYPE = "SMS_TYPE";
-    
-    private static final int MIN_FRAME_WIDTH = 600;
-    private static final int MIN_FRAME_HEIGHT = 240;
-    private static final int MAX_FRAME_WIDTH = 1200; // = 5/8 * 1920
-    private static final int MAX_FRAME_HEIGHT = 675; // = 5/8 * 1080
-
+   
     private static final String LOG_TAG = "BarcodeminCDV";
 
     private String [] permissions = { Manifest.permission.CAMERA };
@@ -174,9 +169,7 @@ public class BarcodeminCDV extends CordovaPlugin {
                                 Log.i("CordovaLog", e.getLocalizedMessage());
                             }
                         }
-                        
-                        intentScan.putExtra(Intents.Scan.WIDTH, 600);
-                        
+                                                
                         intentScan.putExtra(Intents.Scan.CAMERA_ID, obj.optBoolean(PREFER_FRONTCAMERA, false) ? 1 : 0);
                         intentScan.putExtra(Intents.Scan.SHOW_FLIP_CAMERA_BUTTON, obj.optBoolean(SHOW_FLIP_CAMERA_BUTTON, false));
                         if (obj.has(FORMATS)) {
