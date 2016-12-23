@@ -25,6 +25,8 @@ import org.apache.cordova.PermissionHelper;
 
 import com.google.zxing.client.android.Intents;
 
+import android.widget.Toast;
+
 /**
  * This calls out to the ZXing barcode reader and returns the result.
  *
