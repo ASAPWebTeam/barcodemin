@@ -137,8 +137,6 @@ public class BarcodeminCDV extends CordovaPlugin {
 
                 Intent intentScan = new Intent(SCAN_INTENT);
                 intentScan.addCategory(Intent.CATEGORY_DEFAULT);
-                
-                Toast.makeText(that.cordova.getActivity().getApplicationContext(),"Width: " + intentScan.getStringExtra("SCAN_WIDTH"), Toast.LENGTH_LONG).show();
 
                 // add config as intent extras
                 if (args.length() > 0) {
