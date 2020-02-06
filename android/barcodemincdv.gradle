@@ -1,4 +1,4 @@
-def minSdkVersion = 19
+def minSdkVersion = 15
 
 if(cdvMinSdkVersion == null) {
     ext.cdvMinSdkVersion = minSdkVersion;
@@ -14,7 +14,7 @@ repositories{
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:28.0.0+'
+    compile 'com.android.support:support-v4:24.1.1+'
     compile(name:'barcodemincdv', ext:'aar')
 }
 
